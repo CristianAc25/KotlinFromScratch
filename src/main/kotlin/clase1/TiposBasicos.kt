@@ -2,12 +2,12 @@ package clase1
 
 fun main() {
     // Numbers
-    val largo: Long = 10000000000L
-    val entero: Int = 10
-    val corto: Short = 32000
-    val byte: Byte = 127
-    val doble: Double = 3.14159265359
-    val flotante: Float = 3.14F
+    var largo: Long = 10000000000
+    var entero: Int = 10
+    var corto: Short = 32000
+    var byte: Byte = 127
+    var doble: Double = 3.14159265359
+    var flotante: Float = 3.14F
 
     // Char
     val caracter: Char = 'A'
@@ -16,10 +16,25 @@ fun main() {
     val booleano: Boolean = true
 
     // Cadena
-    val cadena: String = "Hola, mundo"
+    val cadena: String = "Hola, mundo $entero"
 
-    // Arreglo
-    val arreglo = arrayOf(1,2,3,4, "fds")
+    val rawString = """
+        | Hola
+        | Mundo!
+    """.trimIndent()
+
+    // Arreglos
+    val arreglo = intArrayOf(1,2,3,4)
+
+    val arregloObjNull = Array<Book?>(6) { null }
+    val arregloObjInit = Array<Book?>(6) { Book() }
+
+    val arregloInts = Array(5) { i -> println(i + 2) }
+
+    val lista = mutableListOf(1,2,4)
+    lista[2] = 5
+
+    val hash = hashMapOf("One" to 1, "Dos" to 2)
 
     println(largo)
     println(entero)
